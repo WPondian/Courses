@@ -1,2 +1,1 @@
-# Courses
-Completed Courses Repository
+# Completed Courses Repository
