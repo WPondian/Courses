@@ -7,6 +7,6 @@ $divisao = 2 / 2;
 
 $doisAoCubo = 2 ** 3;
 
-$restoDaDivisao = 10 % 3;
+$restoDaDivisao = 10 % 2;
 
 echo $restoDaDivisao;
