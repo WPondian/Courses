@@ -1,0 +1,14 @@
+{
+  "name": "javascript-testes-e2e-com-cypress",
+  "version": "1.0.0",
+  "description": "Iniciando curso teste e2e com cypress",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx cypress open"
+  },
+  "author": "Willian Pondian",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^10.9.0"
+  }
+}
