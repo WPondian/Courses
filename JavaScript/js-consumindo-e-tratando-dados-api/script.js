@@ -1,0 +1,1 @@
+console.log('implementando arquivo js')
