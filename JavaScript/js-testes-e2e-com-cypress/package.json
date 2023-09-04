@@ -1,14 +1,15 @@
 {
-  "name": "javascript-testes-e2e-com-cypress",
+  "name": "primeiro-projeto",
   "version": "1.0.0",
-  "description": "",
+  "description": "Primeiro projeto com Cypress",
   "main": "index.js",
   "scripts": {
     "test": "npx cypress open"
   },
-  "author": "willian pondian",
+  "author": "Willian Pondian",
   "license": "ISC",
   "devDependencies": {
-    "cypress": "^10.10.0"
+    "cypress": "^9.1.1",
+    "mochawesome": "^7.0.1"
   }
 }
