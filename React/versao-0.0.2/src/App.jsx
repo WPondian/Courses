@@ -1,34 +1,25 @@
 import React from "react";
-
-const titulo = <h1>esse é o titulo:</h1>
+import Header from "./exercicio10/Header";
+import Home from "./exercicio10/Home";
+import Produtos from "./exercicio10/Produtos";
 
 const App = () => {
-  const nome = "willian ";
-  const ativo = true;
-  const carro = {
-    marca:'Ford',
-    rodas:'4'
-  }
+  let Pagina;
 
-  function mostrarNome(sobrenome){
-    return 'Willian' + sobrenome;
-  }
+  const { pathname } = window.location;
 
-  const estiloP = {
-    color: "blue",
-    fontSize: "2rem",
+  if (pathname === "/produtos") {
+    Pagina = Produtos;
+  } else {
+    Pagina = Home;
   }
-
 
   return (
     <>
-      {titulo}
-      <p style={estiloP}> { ativo ? 'aaaaa' : 'bbbb'} - {10} </p>
-      {mostrarNome(' Pondian')}
-      <p>{new Date().getFullYear()}</p>
-      <p>{carro.marca}</p>
-      <p>{carro.rodas}</p>
-      <h1 className={ativo ? "ativo" : "inativo"}>Bem vindo {nome}</h1>
+      <section>
+        <Header />
+        <Pagina />
+      </section>
     </>
   );
 };
