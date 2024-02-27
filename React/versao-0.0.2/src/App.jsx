@@ -1,25 +1,49 @@
 import React from "react";
-import Header from "./exercicio10/Header";
-import Home from "./exercicio10/Home";
-import Produtos from "./exercicio10/Produtos";
 
 const App = () => {
-  let Pagina;
+  const [produto, setProduto] = React.useState({});
+  const [preferencia, setPreferencia] = React.useState('');
 
-  const { pathname } = window.location;
+  React.useEffect(()=>{
+    setPreferencia(localStorage.getItem('Produto'));
+  },[])
 
-  if (pathname === "/produtos") {
-    Pagina = Produtos;
-  } else {
-    Pagina = Home;
+  
+
+  async function consultarDados(nome) {
+    const response = await fetch(
+      `https://ranekapi.origamid.dev/json/api/produto/${nome}`
+    );
+    try {
+      let retorno = await response.json();
+      setProduto({ nome: retorno.nome, valor: retorno.preco });
+      setPreferencia(retorno.nome);
+     
+
+      localStorage.setItem('Produto', retorno.nome);
+      console.log(retorno);
+    } catch (error) {
+      console.log(error);
+    }
   }
 
   return (
     <>
-      <section>
-        <Header />
-        <Pagina />
-      </section>
+      <h1>Preferência: {preferencia}</h1>
+      <button
+        style={{ marginRight: "5px" }}
+        onClick={() => consultarDados("notebook")}
+      >
+        Notebook
+      </button>
+      <button
+        style={{ marginRight: "10px" }}
+        onClick={() => consultarDados("smartphone")}
+      >
+        Smatphone
+      </button>
+      <h3>{produto.nome}</h3>
+      <strong>{produto.valor ? "R$ " + produto.valor : ""}</strong>
     </>
   );
 };
