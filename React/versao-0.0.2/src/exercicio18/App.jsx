@@ -1,6 +1,6 @@
 import React from "react";
+import UserContext from "./UserContext";
 import Produto from "./Produto";
-import {GlobalStorage} from "./exercicio18/UserContext";
 
 const App = () => {
   return (
