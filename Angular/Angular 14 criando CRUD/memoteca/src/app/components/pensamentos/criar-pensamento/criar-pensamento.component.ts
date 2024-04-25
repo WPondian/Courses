@@ -20,11 +20,11 @@ export class CriarPensamentoComponent implements OnInit {
   }
 
   criarPensamento() {
-    alert('iiiiihhhuuuuuuuuu');
+
   }
 
   cancelarPensamento() {
-    alert('eta lasqueira');
+
   }
 
 }
