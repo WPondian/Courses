@@ -3,6 +3,11 @@
         "outDir": "dist/js",
         "target": "ES6",
         "noEmitOnError": true,
-        "noImplicitAny": true
-    },"include": ["app/**/*"]
+        "noImplicitAny": true,
+        "removeComments": true,
+        "strictNullChecks": true
+    },
+    "include": [
+        "app/**/*"
+    ]
 }
