@@ -4,22 +4,25 @@ import { Negociacao } from '../models/negociacao.js';
 import { Negociacoes } from '../models/negociacoes.js';
 import { MensagemView } from '../views/mensagem-view.js';
 import { NegociacoesView } from '../views/negociacoes-view.js';
+import { domInjector } from '../decorators/dom-injector.js';
+import { inspect } from '../decorators/inspect.js';
 
 export class NegociacaoController {
     private inputData: HTMLInputElement;
+    @domInjector('#data')
     private inputQuantidade: HTMLInputElement;
+    @domInjector('#quantidade')
     private inputValor: HTMLInputElement;
+    @domInjector('#valor')
     private negociacoes = new Negociacoes();
     private negociacoesView = new NegociacoesView('#negociacoesView');
     private mensagemView = new MensagemView('#mensagemView');
 
     constructor() {
-        this.inputData = <HTMLInputElement>document.querySelector('#data');
-        this.inputQuantidade = document.querySelector('#quantidade') as HTMLInputElement;
-        this.inputValor = document.querySelector('#valor') as HTMLInputElement;
         this.negociacoesView.update(this.negociacoes);
     }
 
+    @inspect()
     @logarTempoDeExecucao()
     public adiciona(): void {
         /*
